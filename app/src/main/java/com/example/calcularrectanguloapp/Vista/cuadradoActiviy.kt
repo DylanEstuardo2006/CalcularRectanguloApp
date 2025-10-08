@@ -1,5 +1,6 @@
 package com.example.calcularrectanguloapp.Vista
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -31,7 +32,7 @@ class cuadradoActiviy : AppCompatActivity(), ContractCuadrado.vistaCuadrado{
         val btnCuadrado = findViewById<Button>(R.id.btnCalcularCuadrado);
         txtResAreaCua = findViewById<TextView>(R.id.txtVAreaCuadrado);
         txtResPerimetroCua = findViewById<TextView>(R.id.txtVPerimetroCuadrado);
-
+        val btnRegresar = findViewById<Button>(R.id.btnVolverCu);
         presentador = PresenterCuadrado(this);
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -45,6 +46,10 @@ class cuadradoActiviy : AppCompatActivity(), ContractCuadrado.vistaCuadrado{
             presentador.presenterAreaCuadrado(ladoCuadradoVal);
             presentador.presenterPerimetroCuadrado(ladoCuadradoVal);
 
+        }
+        btnRegresar.setOnClickListener {
+            val intent = Intent(this, menuFiguras::class.java)
+            startActivity(intent);
         }
 
     }

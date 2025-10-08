@@ -1,5 +1,6 @@
 package com.example.calcularrectanguloapp.Vista
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -30,6 +31,7 @@ class HexagonoActivity: AppCompatActivity(), ContractHexagono.vistaHexagono
         val btnCalcular = findViewById<Button>(R.id.btnCalcular);
        txtResArea = findViewById<TextView>(R.id.txtVAreaH);
         txtResPerimetro = findViewById<TextView>(R.id.txtVPerimetroH);
+        val btnRegresar = findViewById<Button>(R.id.btnVolverH);
 
         presentador = PresenterHexagono(this);
 
@@ -44,7 +46,10 @@ class HexagonoActivity: AppCompatActivity(), ContractHexagono.vistaHexagono
            presentador.presenterArea(lado,apotema);
            presentador.presenterPerimetro(lado,apotema);
        }
-
+        btnRegresar.setOnClickListener {
+            val intent = Intent(this, menuFiguras::class.java)
+            startActivity(intent);
+        }
 
     }
     override fun showArea(area: Float) {

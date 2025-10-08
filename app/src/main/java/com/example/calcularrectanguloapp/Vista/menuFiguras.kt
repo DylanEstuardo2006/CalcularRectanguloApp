@@ -18,7 +18,7 @@ class menuFiguras : AppCompatActivity() {
         setContentView(R.layout.activity_menu_figuras)
         val  spinner = findViewById<Spinner>(R.id.spnOpcion)
         val boton = findViewById<Button>(R.id.btnIr)
-        val opciones = arrayOf("Hexagono","Circulo","Rectangulo","Cuadrado");
+        val opciones = arrayOf("Hexagono","Circulo","Rectangulo","Cuadrado","Triangulo");
         val adaptador = ArrayAdapter<String>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,opciones);
         spinner.adapter = adaptador;
 
@@ -48,6 +48,11 @@ class menuFiguras : AppCompatActivity() {
                 "Cuadrado" ->
                 {
                     val intent = Intent(this, cuadradoActiviy::class.java)
+                    startActivity(intent);
+                }
+                "Triangulo" ->
+                {
+                    val intent = Intent(this, TrianguloActivity::class.java)
                     startActivity(intent);
                 }
             }

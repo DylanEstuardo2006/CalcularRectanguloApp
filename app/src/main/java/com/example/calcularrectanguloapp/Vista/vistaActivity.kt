@@ -1,5 +1,6 @@
 package com.example.calcularrectanguloapp.Vista
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -26,6 +27,7 @@ class vistaActivity: AppCompatActivity(), ContractCirculo.vistaCirculo {
         val btnAreaC = findViewById<Button>(R.id.btnAreaC);
         val btnPerimetroC = findViewById<Button>(R.id.btnPerimetroC);
         txtResultado = findViewById<TextView>(R.id.txtVResultadoC);
+        val btnRegresar = findViewById<Button>(R.id.btnVolverC);
 
 
         presentador = PresenterCirculo(this);
@@ -42,6 +44,10 @@ class vistaActivity: AppCompatActivity(), ContractCirculo.vistaCirculo {
         btnPerimetroC.setOnClickListener {
             val diametroP = txtdiametro.text.toString().toFloat();
             presentador.calcularPerimetro(diametroP)
+        }
+        btnRegresar.setOnClickListener {
+            val intent = Intent(this, menuFiguras::class.java)
+            startActivity(intent);
         }
 
     }

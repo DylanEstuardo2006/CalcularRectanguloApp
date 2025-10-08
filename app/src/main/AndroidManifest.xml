@@ -11,10 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CalcularRectanguloApp">
-      <activity android:name=".Vista.HexagonoActivity" />
+
+        <activity android:name=".Vista.HexagonoActivity" />
         <activity android:name=".Vista.vistaActivity" />
         <activity android:name=".Vista.MainActivity" />
         <activity android:name=".Vista.cuadradoActiviy" />
+        <activity android:name=".Vista.TrianguloActivity" />
         <activity
             android:name=".Vista.menuFiguras"
             android:exported="true">

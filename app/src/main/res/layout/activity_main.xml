@@ -72,6 +72,22 @@
       android:textAlignment="center"
       android:textSize="25sp"
       />
+<LinearLayout
+    android:layout_marginTop="30dp"
+    android:layout_width="match_parent"
+    android:layout_height="55dp"
+    android:orientation="vertical"
+    android:gravity="center">
+ <Button
+     android:id="@+id/btnVolverR"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:text="Regresar al Menú"
+  />
+
+</LinearLayout>
+
+
 
  </LinearLayout>
 
